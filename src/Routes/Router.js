@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-const Router = () => {
+const Router = ( { children } ) => {
     const Home = () => <h1>Home</h1>;
     const Pets = () => <h1>Pet List</h1>;
     const Layout = () => <h1>Layout</h1>;
@@ -11,6 +11,7 @@ const Router = () => {
     return (
         <>
             <BrowserRouter>
+            { children }
                 <Routes>
                     <Route path="*" element={<h2>404 - Pagina no encontrada</h2>} />
                     <Route path="/" element={<Home />} />
@@ -18,7 +19,7 @@ const Router = () => {
                     <Route path="/category/:categoria" element={<Categorias />} />
                     <Route path="/item/:id" element={<ItemDetailContainer />} />
                     <Route path="/cart" element={<Cart/>} />
-                    <Route path="/" element={<Layout />}></Route>
+                    <Route path="/Layout" element={<Layout />}></Route>
                     <Route path="/home" element={<Home />}></Route>
                     <Route path="/pets" element={<Pets />}></Route>
                 </Routes>

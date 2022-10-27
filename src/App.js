@@ -1,11 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import Router from './Routes/Router';
+import NavBar from './Components/Navbar/Navbar';
+//<a href='/Home' target="_blank">Voy al Home</a>
 
 function App() {
   return (
     <div className="App">
-      <Router></Router>
+      <Router>
+        <NavBar></NavBar>
+      </Router>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
