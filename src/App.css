@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  background-color: gainsboro;
+  height: 100vh;
+  width: 100vw;
+  display: relative;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  /*grid-template-columns: auto 1fr;*/
+  overflow: hidden;
 }
 
 .App-logo {
@@ -32,6 +40,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

@@ -1,29 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
 import Router from './Routes/Router';
 import NavBar from './Components/Navbar/Navbar';
+import Footer from './Components/footer-components/Footer';
+import CTAbanner from './Components/footer-components/CTAbanner';
+import Headerbar from './Components/featured-components/Headerbar';
+import UserInfo from './Components/featured-components/UserInfo';
+import UserPrompt from './Components/featured-components/UserPrompt';
 //<a href='/Home' target="_blank">Voy al Home</a>
 
-function App() {
+function App(props) {
+  const loggedIn = props.loggedIn
+
   return (
     <div className="App">
       <Router>
-        <NavBar></NavBar>
+        <NavBar>
+
+        </NavBar>
       </Router>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Footer>
+        <CTAbanner/>
+      </Footer>
+      
     </div>
   );
 }

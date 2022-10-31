@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Categorias from "../Components/Categories/Categories";
 
 const Router = ( { children } ) => {
     const Home = () => <h1>Home</h1>;
     const Pets = () => <h1>Pet List</h1>;
     const Layout = () => <h1>Layout</h1>;
     const Productos = () => <h1>Productos</h1>;
-    const Categorias = () => <h1>Categorias</h1>;
     const ItemDetailContainer = () => <h1>ItemDetailContainer</h1>;
     const Cart = () => <h1>Cart</h1>;
     return (
