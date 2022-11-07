@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import Anonymous from "./AnonymousUser";
 
 export default class Toggle extends Component {
     constructor(props) {
@@ -8,6 +9,8 @@ export default class Toggle extends Component {
         //this.handleClick = this.handleClick.bind(this);
     }
 
+
+    // Esto es experimental segun version de React
     handleClick = () => {
         console.log('this is:', this);
         this.setState(prevState => ({
@@ -25,9 +28,12 @@ export default class Toggle extends Component {
 
     render() {
         return (
+            <>
             <button onClick={this.handleClick}>
                 {this.state.isToggleOn ? 'ON' : 'OFF'}
             </button>
+            <Anonymous isRegistered={this.state.isToggleOn}></Anonymous>
+            </>
         );
     }
 }
