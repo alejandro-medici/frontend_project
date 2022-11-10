@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import LoginAlert from "./alerts/loginAlert";
 import Anonymous from "./AnonymousUser";
 
 export default class Toggle extends Component {
@@ -32,6 +33,7 @@ export default class Toggle extends Component {
             <button onClick={this.handleClick}>
                 {this.state.isToggleOn ? 'ON' : 'OFF'}
             </button>
+            <LoginAlert displayError={!this.state.isToggleOn}></LoginAlert>
             <Anonymous isRegistered={this.state.isToggleOn}></Anonymous>
             </>
         );
