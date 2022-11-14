@@ -1,4 +1,10 @@
+import { useContext } from "react";
+import { MainContext } from "../Context/MainContext"; 
+import { LANGUAGES } from "../languaje";
+
 export default function Login() {
+
+    let { current_language } = useContext(MainContext);
 
     function placeHolderFunction () {
         console.log("placeholder");
@@ -8,7 +14,7 @@ export default function Login() {
     <>
         <form onSubmit={ () =>  placeHolderFunction()}>
             <div >
-                <label>Email</label>
+                <label>{ LANGUAGES[current_language].REGISTER.INPUT_EMAIL }</label>
                 <input
                     type="text"
                     aria-label="Email field"
@@ -17,7 +23,7 @@ export default function Login() {
                 />
             </div>
             <div >
-                <label >Password</label>
+                <label >{ LANGUAGES[current_language].REGISTER.INPUT_PASS }</label>
                 <input
                     type="password"
                     aria-label="Password field"
@@ -27,7 +33,7 @@ export default function Login() {
             </div>
             <div >
                 <button type="submit">
-                    Login
+                    { LANGUAGES[current_language].LOGIN.HEADING_LOGIN }
                 </button>
             </div>
         </form>
