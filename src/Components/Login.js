@@ -1,18 +1,38 @@
 import { useContext } from "react";
 import { MainContext } from "../Context/MainContext"; 
 import { LANGUAGES } from "../languaje";
+import { app } from "../Firebase/FirebaseApp";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import SocialLogin from "./SocialLogin";
 
 export default function Login() {
 
     let { current_language } = useContext(MainContext);
 
-    function placeHolderFunction () {
+    function placeHolderFunction ( event) {
+        event.preventDefault(); // evitar la propagacion del evento..
+        const email = "test@test.com";
+        const password = "test1234";
+        const auth = getAuth(app);
+        const user = signInWithEmailAndPassword(auth, email, password)
+        .then((credentials) => {
+            // Si llegamos aca... es porque se logeo..
+            const firebase_user = credentials.user;
+            console.log(firebase_user);
+        })
+        .catch( (error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorCode);
+            console.log(errorMessage);
+        } );
+
         console.log("placeholder");
     }
 
     return (
     <>
-        <form onSubmit={ () =>  placeHolderFunction()}>
+        <form onSubmit={ (event) =>  placeHolderFunction(event)}>
             <div >
                 <label>{ LANGUAGES[current_language].REGISTER.INPUT_EMAIL }</label>
                 <input
@@ -37,6 +57,7 @@ export default function Login() {
                 </button>
             </div>
         </form>
+        <SocialLogin></SocialLogin>
     </>
     );
 }
