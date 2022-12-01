@@ -1,8 +1,14 @@
-import { useParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 
 const Categorias = () => {
     
     const { categoria } = useParams();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const params = [];
+
+    for(let entry of searchParams.entries()) {
+        params.push(entry);
+    }
 
     return (
         <>
