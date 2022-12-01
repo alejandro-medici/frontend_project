@@ -8,3 +8,6 @@
     * console.log
 * Estas funciones deben estar en archivo aparte.
 * Elegir 3 pantallas (de su proyecto) y colcoar un componente que reciba alguna de las funciones y se ejecute con un evento. 
+
+
+#Rama Develop
