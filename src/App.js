@@ -27,7 +27,7 @@ function App(props) {
       <Footer>
         <CTAbanner/>
       </Footer>
-      
+      <div>Para generar conflicto en git</div>
     </div>
   );
 }
